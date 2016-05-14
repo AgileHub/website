@@ -66,6 +66,6 @@
       </div>
     </section>
     <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
-    <script>$("#form").submit(function(){ var email = $("#email").val(); var name = $("#name").val(); var msg = $("#message").val();$.ajax({ type: "POST", url: "https://mandrillapp.com/api/1.0/messages/send.json", data: { 'key': 'GsdCHWv8dPGLLdEHek_bhg', 'message': { 'from_email': email, 'from_name': name, 'headers': { 'Reply-To': email }, 'subject': 'AgileLabs Application', 'text': msg, 'to': [ { 'email': 'apply@agilelabs.com', 'name': 'AgileLabs', 'type': 'to' }] } } }).done(function(response) { $("#form").hide(); $("#thanks").show(); }).fail(function(response) { alert('Error sending message.'); });return false;});</script>
+    <script>$("#form").submit(function(){ var email = $("#email").val(); var name = $("#name").val(); var msg = $("#message").val();$.ajax({ type: "POST", url: "https://pmail.herokuapp.com/send", data: { 'token': 'pubkey-ee1fe632afb4e6e8f66774d902797972', 'from_email': email, 'subject': 'AgileLabs Application', 'body': msg + "\n\n" + name + "\n" + email, 'to_email': 'apply@agilelabs.com', } }).done(function(response) { $("#form").hide(); $("#thanks").show(); }).fail(function(response) { alert('Error sending message.'); });return false;});</script>
   </body>
 </html>
