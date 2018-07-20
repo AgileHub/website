@@ -4,46 +4,67 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Helping entrepreneurs validate, execute, and grow their ideas.</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <title>Agilelabs :: Helping entrepreneurs validate, execute, and grow their ideas</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
+    <style>
+      body {
+        margin: 0;
+      }
+      section, .content {
+        margin: 0 auto;
+      }
+      #logo img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      footer {
+        color: #777;
+        font-size: 0.9em;
+      }
+      .social .link {
+        color: #666;
+      }
+    </style>
   </head>
-  <style>
-    body {
-      margin: 0;
-    }
-    section {
-      margin: 0 auto;
-    }
-    .content {
-      margin: 0 auto;
-    }
-    img {
-      display: block;
-      margin-left: auto;
-      margin-right: auto;
-    }
-  </style>
-
-  <body class="container">
+  <body class="container-fluid">
     <section>
       <div class="content">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+          <a class="navbar-brand font-weight-bold" href="/">AGILELABS</a>
+          <div class="collapse navbar-collapse" id="navbarText">
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="https://jscomplete.com">jsComplete.com</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="https://edgecoders.com">EdgeCoders.com</a>
+              </li>
+            </ul>
+            <span class="navbar-text font-weight-bold">
+              (707) 234-5611
+            </span>
+          </div>
+        </nav>
         <div id='logo'>
           <img src="https://pbs.twimg.com/profile_images/671488014690816000/z_8KIJr3.png" width="325" class="img-responsive" />
         </div>
         <div>
-          <h1 style="text-align: center;">LET US FIND YOU SUCCESS FORMULA</h1>
-          <div class="row">
-            <p class="col-sm-8 col-sm-offset-2 lead">
-              We are a distributed team of experienced developers and marketers who help entrepreneurs validate, execute, and grow their ideas. Apply below and we'll be in touch.
-            </p>
-          </div>
+          <h1 class="text-center">LET US FIND YOU SUCCESS FORMULA</h1>
+          <p class="leads text-center m-5 px-5">
+            We are a distributed team of experienced developers and marketers who help entrepreneurs validate, execute, and grow their ideas.
+          </p>
         </div>
       </div>
     </section>
-    <hr>
-    <section class="">
+    <p class="leads text-center m-3 font-weight-bold">
+      Fill the form below and we'll get back to you
+    </p>
+    <hr/>
+    <section class="my-5">
       <div class="row">
-        <div class="col-sm-8 col-sm-offset-2">
+        <div class="col-8 offset-2">
           <div id="thanks" class="lead text-center" style="display: none;">
             Thanks for applying! we will be in touch soon.
           </div>
@@ -60,11 +81,22 @@
               <label for="message">What do you need help with?</label>
               <textarea id="message" name="message" cols="30" rows="10" class="form-control" placeholder="What do you need help with?" required></textarea>
             </div>
-            <button type="submit" class="btn btn-default">Apply</button>
+            <button type="submit" class="btn btn-secondary">Apply</button>
           </form>
         </div>
       </div>
     </section>
+    <hr />
+    <footer class="mt-1 mb-2 text-center">
+      <div>© Copyright 2016+ Agilelabs LLC .All Right Reserved.</div>
+      <div>Our Mailing Address is: PO Box 4823, Stateline NV</div>
+      <div class="social my-2">
+        <a target="_blank" class="link" href="https://twitter.com/agilelabs"><i class="fab fa-twitter fa-2x"></i></a>
+        &nbsp;&nbsp;
+        <a target="_blank" class="link" href="https://facebook.com/everythingagile"><i class="fab fa-facebook fa-2x"></i></a>
+      </div>
+    </footer>
+
     <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
     <script>$("#form").submit(function(){ var email = $("#email").val(); var name = $("#name").val(); var msg = $("#message").val();$.ajax({ type: "POST", url: "https://pmail.herokuapp.com/send", data: { 'token': 'pubkey-ee1fe632afb4e6e8f66774d902797972', 'from_email': email, 'subject': 'AgileLabs Application', 'body': msg + "\n\n" + name + "\n" + email, 'to_email': 'apply@agilelabs.com', } }).done(function(response) { $("#form").hide(); $("#thanks").show(); }).fail(function(response) { alert('Error sending message.'); });return false;});</script>
   </body>
